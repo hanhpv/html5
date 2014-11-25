@@ -3,8 +3,26 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <script>
+        var id = '';
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function drag(ev) {
+//            ev.dataTransfer.setData('text', ev.target.id);
+            id = ev.target.id;
+        }
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData('text');
+            ev.target.appendChild(document.getElementById(id));
+        }
+    </script>
 </head>
 <body>
-
+    <div id="container" ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 400px; height: 300px; border: 1px solid #c3c3c3"></div>
+    <img id="drag1" src="images/camera_360.jpg" draggable="true" ondrag="drag(event)"/>
 </body>
 </html>
