@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>HTML5 training</title>
+</head>
+<body>
+    <header>
+        <h1>What Does WWF Do?</h1>
+        <p>WWF's mission:</p>
+    </header>
+    <nav>
+        <a href="/html/">HTML</a> |
+        <a href="/css/">CSS</a> |
+        <a href="/js/">JavaScript</a> |
+        <a href="/jquery/">jQuery</a>
+    </nav>
+    <main>
+        <!-- map -->
+        <section>
+            <h1><mark>&lt;map&gt; tag</mark></h1>
+            <table cellpadding="10" border="1">
+                <tr>
+                    <td>
+                        <img src="images/planets.gif" width="146" height="126" alt="Planets" usemap="#planetmap">
+                        <map name="planetmap">
+                            <area shape="rect" coords="0,0,82,126" href="images/sun.gif" alt="Sun" title="Sun">
+                            <area shape="circle" coords="90,58,3" href="images/merglobe.gif" alt="Mercury" title="Mercury">
+                            <area shape="circle" coords="124,58,8" href="images/venglobe.gif" alt="Venus" title="Venus">
+                        </map>
+                    </td>
+                    <td>
+                        <h4>Code</h4>
+                        <img src="images/tag_map.png"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <!-- mark -->
+        <section>
+            <h1><mark>&lt;mark&gt; tag</mark></h1>
+            <table cellpadding="10" border="1">
+                <tr>
+                    <td>
+                        <p>TÔi <mark>buồn ngủ</mark> quá</p>
+                    </td>
+                    <td>
+                        <h4>Code</h4>
+                        <img src="images/tag_mark.png"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+        <!-- canvas -->
+        <section>
+            <h1><mark>&lt;canvas&gt; tag</mark></h1>
+            <table cellpadding="10" border="1">
+                <tr>
+                    <td>
+                        <canvas id="myCanvas" width="200" height="100" style="border: 1px solid #c3c3c3"></canvas>
+                        <script>
+                            var c = document.getElementById('myCanvas');
+                            var ctx = c.getContext('2d');
+                            ctx.fillStyle = '#ff0000';
+                            ctx.fillRect(0, 0, 100, 100);
+                            ctx.fillStyle = '#000';
+                            ctx.fillText('hanh van phung', 105, 50);
+                        </script>
+                    </td>
+                    <td>
+                        <h4>Code</h4>
+                        <img src="images/tag_canvas_1.png"/>
+                    </td>
+                </tr>
+            </table>
+            <table cellpadding="10" border="1">
+                <tr>
+                    <td>
+                        <canvas id="myCanvas2" width="200" height="100" style="border: 1px solid #c3c3c3"></canvas>
+                        <script>
+                            var c2 = document.getElementById('myCanvas2');
+                            var ctx2 = c2.getContext('2d');
+                            ctx2.moveTo(200,0);
+                            ctx2.lineTo(0,100);
+                            ctx2.moveTo(0,0);
+                            ctx2.lineTo(200,100);
+                            ctx2.stroke();
+                        </script>
+                    </td>
+                    <td>
+                        <h4>Code</h4>
+                        <img src="images/tag_canvas_2.png"/>
+                    </td>
+                </tr>
+            </table>
+            <table cellpadding="10" border="1">
+                <tr>
+                    <td>
+                        <canvas id="myCanvas3" width="200" height="100" style="border: 1px solid #c3c3c3"></canvas>
+                        <script>
+                            var c3 = document.getElementById('myCanvas3');
+                            var ctx3 = c3.getContext('2d');
+                            ctx3.beginPath();
+                            ctx3.arc(95,50,40,0,2*Math.PI);
+                            ctx3.stroke();
+                        </script>
+                    </td>
+                    <td>
+                        <h4>Code</h4>
+                        <img src="images/tag_canvas_3.png"/>
+                    </td>
+                </tr>
+            </table>
+            <table cellpadding="10" border="1">
+                <tr>
+                    <td>
+                        <img src="images/camera_360.jpg" style="display: none" width="300" height="204" id="camera_360"/>
+                        <canvas id="myCanvas4" width="350" height="250" style="border: 1px solid #c3c3c3"></canvas>
+                        <script>
+                            // the image must be loaded fully
+                            window.onload = function() {
+                                var c4 = document.getElementById('myCanvas4');
+                                var ctx4 = c4.getContext('2d');
+                                var img = document.getElementById('camera_360');
+                                ctx4.drawImage(img, 10, 10);
+                            }
+                        </script>
+                    </td>
+                    <td>
+                        <h4>Code</h4>
+                        <img src="images/tag_canvas_4.png"/>
+                    </td>
+                </tr>
+            </table>
+        </section>
+    </main>
+</body>
+</html>
