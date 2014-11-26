@@ -8,21 +8,24 @@
         function allowDrop(ev) {
             ev.preventDefault();
         }
-
         function drag(ev) {
 //            ev.dataTransfer.setData('text', ev.target.id);
-            id = ev.target.id;
+//            id = ev.target.id;
+            localStorage.setItem('id', ev.target.id);
         }
-
         function drop(ev) {
             ev.preventDefault();
-            var data = ev.dataTransfer.getData('text');
-            ev.target.appendChild(document.getElementById(id));
+            var data = localStorage.getItem('id');
+            ev.target.appendChild(document.getElementById(data));
         }
     </script>
 </head>
 <body>
-    <div id="container" ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 400px; height: 300px; border: 1px solid #c3c3c3"></div>
-    <img id="drag1" src="images/camera_360.jpg" draggable="true" ondrag="drag(event)"/>
+    <div id="wrap" ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 100%; height: 100%; border: 1px solid #c3c3c3;">
+        <div id="container1" ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 400px; height: 300px; border: 1px solid #c3c3c3; float: left"></div>
+        <div id="container2" ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 400px; height: 300px; border: 1px solid #c3c3c3; float: left; margin-left: 20px"></div>
+        <div style="clear: both; margin-bottom: 20px"></div>
+        <img id="draggable" src="images/camera_360.jpg" draggable="true" ondrag="drag(event)"/>
+    </div>
 </body>
 </html>
